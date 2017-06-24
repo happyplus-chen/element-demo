@@ -5,6 +5,7 @@ import Hello from "src/components/Hello.vue"
 import index from "src/components/index.vue"
 import roweditcrl from "src/components/roweditcrl.vue"
 import render from "src/components/render.vue"
+import grid from "src/grid/grid"
 Vue.use(VueRouter)
 const router = new VueRouter({
   mode: 'history',
@@ -20,7 +21,7 @@ const router = new VueRouter({
     },
     {
       path: '/',
-      component: index
+      component: grid
     },
     {
       path: '/test',
