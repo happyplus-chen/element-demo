@@ -4,7 +4,8 @@
       <el-table-column :key="item.prop" v-for="(item, index) in columns" :prop="item.prop" :label="item.label" :width='item.width'>
         <template scope="scope">
           <div v-show="item.editenable">
-            <grid-cell v-model="scope.row[item.prop]" :value="scope.row[item.prop]" :type="item.editor" :option="item"></grid-cell>
+            <!--<grid-cell v-model="scope.row[item.prop]" :value="scope.row[item.prop]" :type="item.editor" :option="item"></grid-cell>-->
+            <rendercell v-model="scope.row[item.prop]" :type="item.editor" :option="item"></rendercell>
           </div>
           <div v-show="!item.editenable">{{scope.row[item.prop]}}</div>
         </template>
@@ -13,10 +14,11 @@
   </div>
 </template>
 <script>
+import rendercell from  './cell'
 import gridCell from './gridcell'
 export default {
   name: 'grid',
-  components: { gridCell },
+  components: { gridCell,rendercell },
   data() {
     return {
       data: [{
