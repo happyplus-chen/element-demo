@@ -7,6 +7,8 @@ import router from 'src/routers/routers'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 Vue.use(ElementUI)
+import resource from 'vue-resource'
+Vue.use(resource)
 
 import Vuetify from 'vuetify'
 Vue.use(Vuetify)

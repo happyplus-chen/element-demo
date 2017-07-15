@@ -6,6 +6,7 @@ import index from "src/components/index.vue"
 import roweditcrl from "src/components/roweditcrl.vue"
 import render from "src/components/render.vue"
 import grid from "src/grid/grid"
+import asynccomponent from 'src/asynccomponent/index'
 Vue.use(VueRouter)
 const router = new VueRouter({
   mode: 'history',
@@ -30,6 +31,10 @@ const router = new VueRouter({
     {
       path: '/render',
       component: render
+    },
+     {
+      path: '/async',
+      component: asynccomponent
     }
   ]
 })
