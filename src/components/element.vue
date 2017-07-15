@@ -66,7 +66,6 @@ Vue.use(Validator)
 Vue.component('comp2', function (resolve) {
   setTimeout(() => {
     axios.get('http://localhost:8080/static/Hello.vue').then(function(res){
-      
       debugger
     })
     require(['./Hello'], resolve);

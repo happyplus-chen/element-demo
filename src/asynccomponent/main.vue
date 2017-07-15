@@ -10,16 +10,16 @@ export default {
     components: { async },
     data() {
         return {
-            cc: './async1'
+            cc: 'async1'
         }
     },
     methods: {
         change() {
-            if (this.cc == "./async1") {
-                this.cc = "./async2"
+            if (this.cc == "async1") {
+                this.cc = "async2"
             }
             else {
-                this.cc = "./async1"
+                this.cc = "async1"
             }
 
         }
