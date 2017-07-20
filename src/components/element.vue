@@ -1,6 +1,6 @@
 <template>
   <div class="demo">
-    <async-component></async-component>
+    <!-- <async-component></async-component> -->
     <comp2></comp2>
     <el-form>
       <table cellspacing="0">

@@ -7,6 +7,8 @@ import roweditcrl from "src/components/roweditcrl.vue"
 import render from "src/components/render.vue"
 import grid from "src/grid/grid"
 import asynccomponent from 'src/asynccomponent/index'
+import popedit from 'src/popedit/popedit'
+import transfer from 'src/components/transfer'
 Vue.use(VueRouter)
 const router = new VueRouter({
   mode: 'history',
@@ -35,6 +37,14 @@ const router = new VueRouter({
      {
       path: '/async',
       component: asynccomponent
+    },
+    {
+      path: '/popedit',
+      component: popedit
+    },
+        {
+      path: '/transfer',
+      component: transfer
     }
   ]
 })

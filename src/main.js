@@ -14,6 +14,9 @@ import Vuetify from 'vuetify'
 Vue.use(Vuetify)
 import "vuetify/dist/vuetify.min.css"
 
+import Mock from './mock/mock'
+Mock.bootstrap()
+
 // Vue.use(VueRouter)
 // import element from "./components/element.vue"
 // import Hello from "./components/Hello.vue"
