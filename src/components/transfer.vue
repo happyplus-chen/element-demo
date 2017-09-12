@@ -67,6 +67,7 @@ export default {
         selectall(selection) {
             let vm = this
             if (selection.length) {
+                debugger
                 // selection.forEach(function (v) {
                 //     // console.log(v)
                 //     vm.selectData[`${v[vm.field]}`] = v

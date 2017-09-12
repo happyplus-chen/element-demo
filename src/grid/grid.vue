@@ -82,7 +82,7 @@ export default {
       columns: [
         {
           prop: 'name',
-          label: '姓名',
+          label: this.$t("message.hello"),
           width: '180px',
           editenable: true,
           'show-overflow-tooltip': true,

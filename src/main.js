@@ -9,7 +9,7 @@ import 'element-ui/lib/theme-default/index.css'
 Vue.use(ElementUI)
 import resource from 'vue-resource'
 Vue.use(resource)
-
+import i18n from './i18n'
 import Vuetify from 'vuetify'
 Vue.use(Vuetify)
 import "vuetify/dist/vuetify.min.css"
@@ -43,5 +43,10 @@ Mock.bootstrap()
 new Vue({
   el: '#app',
   router: router,
-  render: h => h(App)
+  i18n,
+  render: h => h(App),
+  mounted(){
+    // debugger
+    console.log('main mounted')
+  }
 })
