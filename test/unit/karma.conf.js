@@ -25,7 +25,7 @@ plugins: [
           ]
         }
       },
-      browsers: ['Chrome_headLess'],
+      browsers: ['Chrome'],
       frameworks: ['mocha', 'sinon-chai'],
       reporters: ['spec', 'coverage'],
       files: ['./index.js'],

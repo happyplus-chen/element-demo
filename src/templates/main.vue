@@ -7,7 +7,7 @@
     </div>
 </template>
 <script>
-import l from 'testtpl-loader'
+// import l from 'testtpl-loader'
 // import test from './test.tpl'
 export default {
     // components: { test },
@@ -18,7 +18,7 @@ export default {
     },
     mounted(){
         debugger
-        console.log(l,111)
+        // console.log(l,111)
     }
 }
 </script>

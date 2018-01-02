@@ -12,6 +12,7 @@ import transfer from 'src/components/transfer'
 import template from 'src/templates/main'
 import form from 'src/components/form'
 import edittable from 'src/components/edittable'
+import codemirror from 'src/codemirror/codemirror'
 Vue.use(VueRouter)
 const router = new VueRouter({
   mode: 'history',
@@ -51,6 +52,10 @@ const router = new VueRouter({
     {
       path: '/edittable',
       component: edittable
+    },
+    {
+      path: '/codemirror',
+      component: codemirror
     }
   ]
 })
