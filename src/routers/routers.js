@@ -13,6 +13,7 @@ import template from 'src/templates/main'
 import form from 'src/components/form'
 import edittable from 'src/components/edittable'
 import codemirror from 'src/codemirror/code'
+import menu from 'src/components/menu'
 Vue.use(VueRouter)
 const router = new VueRouter({
   mode: 'history',
@@ -56,6 +57,10 @@ const router = new VueRouter({
     {
       path: '/codemirror',
       component: codemirror
+    },
+    {
+      path: '/menu',
+      component: menu
     }
   ]
 })
