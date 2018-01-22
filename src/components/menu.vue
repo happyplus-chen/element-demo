@@ -3,6 +3,16 @@
  <ul v-for="menuItem in theModel" :key="menuItem.menuName">
  <my-tree :model="menuItem"></my-tree>
  </ul>
+ <el-button @click="loading">loading</el-button>
+ <loading :active="showlding"></loading>
+ <div class="loading-parent-ralative box">
+   <el-button>aaaa</el-button>
+   <div class="loading-parent">
+     <div class="spin">
+       123
+     </div>
+   </div>
+ </div>
  </div>
 </template>
 <script>
@@ -71,14 +81,55 @@ var myData = [
   }
 ];
 import myTree from "./menuitems.vue";
+import loading from "./loading";
 export default {
   components: {
-    myTree
+    myTree,
+    loading
   },
   data() {
     return {
-      theModel: myData
+      theModel: myData,
+      showlding: false
     };
+  },
+  methods: {
+    loading() {
+      this.showlding = true;
+    }
+  },
+  mounted() {
+    window.mm = this;
   }
 };
 </script>
+
+<style>
+.box {
+  width: 300px;
+  height: 300px;
+  border: 1px solid red;
+  position: relative;
+}
+.loading-parent {
+  position: absolute;
+  z-index: 10000;
+  background-color: hsla(0, 19%, 63%, .89);
+  margin: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: opacity 0.3s;
+}
+.spin {
+  height: 42px;
+  width: 42px;
+  animation: loading-rotate 2s linear infinite;
+  top: 50%;
+  margin-top: -21px;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+}
+</style>

@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "axios-mock-adapter": "^1.10.0",
+    "buefy": "^0.6.2",
     "codemirror": "^5.33.0",
     "karma-chrome-launcher": "^2.2.0",
     "karma-jasmine": "^1.1.0",
