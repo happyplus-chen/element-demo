@@ -14,6 +14,9 @@ import form from 'src/components/form'
 import edittable from 'src/components/edittable'
 import codemirror from 'src/codemirror/code'
 import menu from 'src/components/menu'
+import treemain from 'src/components/treemain'
+import fallmenu from 'src/components/fallmenu'
+import ganttshow from 'src/components/ganttshow'
 Vue.use(VueRouter)
 const router = new VueRouter({
   mode: 'history',
@@ -49,18 +52,26 @@ const router = new VueRouter({
     }, {
       path: '/form',
       component: form
-    },
-    {
+    }, {
       path: '/edittable',
       component: edittable
-    },
-    {
+    }, {
       path: '/codemirror',
       component: codemirror
-    },
-    {
+    }, {
       path: '/menu',
       component: menu
+    }, {
+      path: '/treemain',
+      component: treemain
+    },
+    {
+      path: '/fallmenu',
+      component: fallmenu
+    },
+    {
+      path: '/ganttshow',
+      component: ganttshow
     }
   ]
 })

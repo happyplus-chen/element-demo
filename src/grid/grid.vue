@@ -1,8 +1,23 @@
 <template>
   <div>
-    <el-input v-model.number="value"></el-input>
+    <!-- <el-tooltip content="Top center" placement="top">
+      <el-input v-model.number="value"></el-input>
+    </el-tooltip> -->
+    <el-dropdown>
+      <span class="el-dropdown-link">
+        下拉菜单
+        <i class="el-icon-arrow-down el-icon--right"></i>
+      </span>
+      <el-dropdown-menu slot="dropdown">
+        <el-dropdown-item>黄金糕</el-dropdown-item>
+        <el-dropdown-item>狮子头</el-dropdown-item>
+        <el-dropdown-item>螺蛳粉</el-dropdown-item>
+        <el-dropdown-item disabled>双皮奶</el-dropdown-item>
+        <el-dropdown-item divided>蚵仔煎</el-dropdown-item>
+      </el-dropdown-menu>
+    </el-dropdown>
     <el-table :data="data" border>
-      <el-table-column :key="item.prop" v-for="(item, index) in columns" :prop="item.prop" :label="item.label" :width='item.width'>
+      <el-table-column :key="item.prop" v-for="(item) in columns" :prop="item.prop" :label="item.label" :width='item.width'>
         <template scope="scope">
           <div v-show="item.editenable">
             <cell v-model="scope.row[item.prop]" :type="item.editor" :option="item"></cell>
@@ -51,42 +66,50 @@ export default {
   // },
   data() {
     return {
-      value:'',cvalue:'',
-      data: [{
-        date: '2016-05-02',
-        name: '王小虎王小虎王小虎王小虎王小虎王小虎王小虎王小虎王小虎王小虎王小虎王小虎',
-        address: '上海市普陀区金沙江路 1518 弄',
-        number: 1,
-        select: 1
-
-      }, {
-        date: '2016-05-04',
-        name: '王大虎',
-        address: '上海市普陀区金沙江路 1517 弄',
-        number: 100,
-        select: 4
-
-      }, {
-        date: '2016-05-01',
-        name: '王老虎',
-        address: '上海市普陀区金沙江路 1519 弄',
-        number: -999,
-        select: 2
-      }, {
-        date: '2016-05-03',
-        name: '王二虎',
-        address: '上海市普陀区金沙江路 1516 弄',
-        number: 100,
-        select: '',
-      }],
+      value: '',
+      cvalue: '',
+      data: [
+        {
+          date: '2016-05-02',
+          name:
+            '王小虎王小虎王小虎王小虎王小虎王小虎王小虎王小虎王小虎王小虎王小虎王小虎',
+          address: '上海市普陀区金沙江路 1518 弄',
+          number: 1,
+          select: 1
+        },
+        {
+          date: '2016-05-04',
+          name: '王大虎',
+          address: '上海市普陀区金沙江路 1517 弄',
+          number: 100,
+          select: 4
+        },
+        {
+          date: '2016-05-01',
+          name: '王老虎',
+          address: '上海市普陀区金沙江路 1519 弄',
+          number: -999,
+          select: 2
+        },
+        {
+          date: '2016-05-03',
+          name: '王二虎',
+          address: '上海市普陀区金沙江路 1516 弄',
+          number: 100,
+          select: ''
+        }
+      ],
       columns: [
         {
           prop: 'name',
-          label: this.$t("message.hello"),
+          label: this.$t('message.hello'),
           width: '180px',
           editenable: true,
           'show-overflow-tooltip': true,
-          formatter: (row) => { console.log(row); return 'xxxx' }
+          formatter: row => {
+            console.log(row)
+            return 'xxxx'
+          }
         },
         {
           prop: 'date',
@@ -114,9 +137,15 @@ export default {
           editenable: true,
           editor: 'select',
           editOp: {
-            conf: [{ label: '选项1', value: 1 }, { label: '选项2', value: 2 }, { label: '选项3', value: 3 }, { label: '选项4', value: 4 }]
+            conf: [
+              { label: '选项1', value: 1 },
+              { label: '选项2', value: 2 },
+              { label: '选项3', value: 3 },
+              { label: '选项4', value: 4 }
+            ]
           }
-        }],
+        }
+      ],
       activedcell: ['0-1']
     }
   },
@@ -125,7 +154,6 @@ export default {
       this.activedcell = [cell]
     },
     rowEditMode(row) {
-      
       this.activedcell = [row]
     },
     cellupdate(value, vm) {
@@ -134,13 +162,13 @@ export default {
       celldom.className += ' update'
     }
   },
-  filters:{
-    test(v){
-      return v+' xxx'
+  filters: {
+    test(v) {
+      return v + ' xxx'
     }
   },
 
-  mounted(){
+  mounted() {
     var res = Vue.compile('<div><span>11111</span></div>').render
   }
 }

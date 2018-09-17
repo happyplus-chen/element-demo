@@ -1,17 +1,22 @@
 <template>
   <div>
     <el-input v-model="value1"></el-input>
-    <el-input v-demo="value1"
-              v-model="value2"></el-input>
-    <el-input v-demo="value2"
-              v-model="value3"></el-input>
+    <el-input v-demo="value1" v-model="value2"></el-input>
+    <el-input v-demo="value2" v-model="value3"></el-input>
   </div>
 </template>
 
 <script>
 import Vue from "vue"
+// var nodejieba = require("nodejieba");
+// nodejieba.load({
+//   dict: nodejieba.DEFAULT_DICT,
+//   hmmDict: nodejieba.DEFAULT_HMM_DICT,
+//   idfDict: nodejieba.DEFAULT_IDF_DICT,
+//   stopWordDict: nodejieba.DEFAULT_STOP_WORD_DICT
+// });
 Vue.directive('demo', {
-  bind: function (el, binding, vnode) {
+  bind: function(el, binding, vnode) {
 
     let vm = vnode.componentInstance.$parent;
     debugger
